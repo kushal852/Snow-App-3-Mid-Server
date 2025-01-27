@@ -1,6 +1,24 @@
 import '@servicenow/sdk/global'
 import { BusinessRule, ClientScript } from '@servicenow/sdk/core'
 import { showStateUpdate } from '../server/script.js'
+import { Table, DateColumn, StringColumn } from '@servicenow/sdk/core'
+
+export const x_snc_snowapp3mids_table = Table({
+    name: 'x_snc_snowapp3mids_table',
+    schema: {
+        deadline: DateColumn({ label: 'Deadline' }),
+        state: StringColumn({
+            label: 'State',
+            choices: {
+                ready: { label: 'Ready', inactive_on_update: false },
+                completed: { label: 'Completed', inactive_on_update: false },
+                in_progress: { label: 'In Progress', inactive_on_update: false },
+            },
+        }),
+        task: StringColumn({ label: 'Task', maxLength: 120 }),
+    },
+    label: 'snowapp3mids Table',
+})
 
 //creates a client script that pops up 'Table loaded successfully!!' message every time todo record is loaded
 ClientScript({

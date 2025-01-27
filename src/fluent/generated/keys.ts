@@ -21,6 +21,10 @@ declare global {
                         table: 'sys_module'
                         id: '0037d8d23bd245fda9ef99e35d5d395f'
                     }
+                    src_server_gupta_js: {
+                        table: 'sys_module'
+                        id: 'd3152c9c0c7d4febb6e7b1351ce7d5cd'
+                    }
                 }
             }
         }
